@@ -1,0 +1,13 @@
+{
+  "name": "react-router-toolbox",
+  "version": "0.0.1",
+  "description": "React & Router toolbox including components, util functions and more",
+  "main": "index.js",
+  "author": "Alejandro Andersson <alejandro@thelad.io>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  }
+}
