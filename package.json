@@ -1,6 +1,6 @@
 {
   "name": "react-router-toolbox",
-  "version": "0.0.1",
+  "version": "0.0.2-rc1",
   "description": "React & Router toolbox including components, util functions and more",
   "main": "index.js",
   "author": "Alejandro Andersson <alejandro@thelad.io>",
