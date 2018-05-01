@@ -4,10 +4,30 @@
   "description": "React & Router toolbox including components, util functions and more",
   "main": "index.js",
   "author": "Alejandro Andersson <alejandro@thelad.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dawaa/react-redux-toolbelt.git"
+  },
+  "homepage": "https://github.com/dawaa/react-redux-toolbelt",
+  "bugs": {
+    "url": "https://github.com/dawaa/react-redux-toolbelt/issues"
+  },
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.3.2",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0"
-  }
+  },
+  "keywords": [
+    "react-redux-toolset",
+    "react-redux-toolbelt",
+    "react-utils",
+    "redux-utils",
+    "react-tool",
+    "react-tools",
+    "redux-tool",
+    "redux-tools",
+    "react-redux-utils",
+    "redux-rect-utils"
+  ]
 }
