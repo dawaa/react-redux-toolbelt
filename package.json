@@ -28,6 +28,6 @@
     "redux-tool",
     "redux-tools",
     "react-redux-utils",
-    "redux-rect-utils"
+    "redux-react-utils"
   ]
 }
