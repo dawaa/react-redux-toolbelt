@@ -13,6 +13,10 @@
     "url": "https://github.com/dawaa/react-redux-toolbelt/issues"
   },
   "license": "MIT",
+  "scripts": {
+    "prepublish": "yarn run build:babel",
+    "build:babel": "rimraf ./lib && babel src --out-dir lib --copy-files"
+  },
   "peerDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "react": "^16.3.2",
