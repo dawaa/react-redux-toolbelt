@@ -30,5 +30,8 @@
     "redux-tools",
     "react-redux-utils",
     "redux-react-utils"
-  ]
+  ],
+  "devDependencies": {
+    "rimraf": "^2.6.2"
+  }
 }
