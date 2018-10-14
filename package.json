@@ -18,6 +18,8 @@
   "license": "MIT",
   "scripts": {
     "prepublish": "yarn run build:babel",
+    "test": "BABEL_ENV=test mocha --require babel-register --require babel-core/register tests/setup.js tests/*.test.js",
+    "test:watch": "yarn run test --watch",
     "build:babel": "rimraf ./lib && babel src --out-dir lib"
   },
   "peerDependencies": {
@@ -40,7 +42,22 @@
   ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "rimraf": "^2.6.2"
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "jsdom": "11.11.0",
+    "mocha": "^5.2.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "rimraf": "^2.6.2",
+    "sinon": "^7.0.0",
+    "sinon-chai": "^3.2.0"
   }
 }
