@@ -3,6 +3,15 @@
 Just nifty things I've come to want to use in every React project I work with
 nowadays.
 
+
+## Table of Contents
+* [Installation](#installation)
+* [Components](#components)
+  * [Container](#container)
+* [Helpers](#helper)
+  * [withRedux](#withredux)
+
+
 ## Installation
 
 ```
@@ -16,4 +25,61 @@ static props in your classes.
 {
     "plugins": [ "transform-class-properties" ]
 }
+```
+
+
+## Components
+
+#### Container
+
+Easily create container components that clearly defines what parts of the Store or which dispatch actions it'll be passing to its Children.
+
+Under the hood a `Container` will make use of `withRedux()` helper method to bind the props.
+
+> However, **note** that nesting containers can result in overriding props set by the previous outer container.
+
+```jsx
+// external
+import { bindActionCreators } from 'redux'
+import { Container }          from 'react-redux-toolbelt'
+
+// internal
+import login from './actions/somewhere/loginUser'
+
+class UserContainer extends Container {
+  static setProps = {
+    fromState: state => ({
+      authorized: state.user.isAuthorized,
+    }),
+    fromDispatch: dispatch => ({
+      loginUser: bindActionCreators( login, dispatch ),
+    }),
+  }
+}
+
+export default UserContainer
+```
+
+
+## Helpers
+
+#### withRedux
+
+Again, demonstrating using a Container example. Though it could just as appropriately be used for any "type" of component, or just be used as a more describing way of setting your props as opposed to how you'd do it otherwise with `connect(state, dispatch)(Component)`
+
+So the role of `withRedux()` is to take what you've defined under the static prop `setProps` and pass whatever it sees there to the Component as props.
+
+```jsx
+class SomeContainer extends React.Component {
+  static setProps = {
+    fromState: state => ({
+    }),
+    fromDispatch: dispatch => ({
+    }),
+  }
+
+  // .. code
+}
+
+export default withRedux( SomeContainer )
 ```

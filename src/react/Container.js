@@ -3,17 +3,22 @@ import React from 'react'
 
 class Container extends React.PureComponent {
 
+  _getChildrenWithInheritedProps() {
+    const { children, ...rest } = this.props
+
+    return React.Children.map( children, child => {
+      return React.cloneElement( child, { ...rest } )
+    } )
+  }
+
   render() {
-    const Component = this.constructor.Component
+    const children = this._getChildrenWithInheritedProps()
 
-    if ( Component == null ) {
-      console.warn(
-        `Failed to render ${ this.constructor.name }, missing Component ` +
-        `on the instance.`
-      )
-    }
-
-    return Component != null ? <Component { ...this.props } /> : null
+    return (
+      <React.Fragment>
+        { children }
+      </React.Fragment>
+    )
   }
 
 }
