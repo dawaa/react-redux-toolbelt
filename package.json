@@ -2,7 +2,10 @@
   "name": "react-redux-toolbelt",
   "version": "0.0.4-rc1",
   "description": "React & Redux toolbox including components, util functions and more",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
   "author": "Alejandro Andersson <alejandro@thelad.io>",
   "repository": {
     "type": "git",
@@ -15,7 +18,7 @@
   "license": "MIT",
   "scripts": {
     "prepublish": "yarn run build:babel",
-    "build:babel": "rimraf ./lib && babel src --out-dir lib --copy-files"
+    "build:babel": "rimraf ./lib && babel src --out-dir lib"
   },
   "peerDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
