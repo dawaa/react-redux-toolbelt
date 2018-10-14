@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "prepublish": "yarn run build:babel",
+    "prepublish": "yarn run test && yarn run build:babel",
     "test": "BABEL_ENV=test mocha --require babel-register --require babel-core/register tests/setup.js tests/*.test.js",
     "test:watch": "yarn run test --watch",
     "build:babel": "rimraf ./lib && babel src --out-dir lib"
