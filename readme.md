@@ -32,14 +32,16 @@ static props in your classes.
 
 #### Container
 
-Easily create container components that clearly defines what parts of the Store or which dispatch actions it'll be passing to its Children. In combination with using the helper function `withRedux()`.
+Easily create container components that clearly defines what parts of the Store or which dispatch actions it'll be passing to its Children.
+
+Under the hood a `Container` will make use of `withRedux()` helper method to bind the props.
 
 > However, **note** that nesting containers can result in overriding props set by the previous outer container.
 
 ```jsx
 // external
-import { bindActionCreators }   from 'redux'
-import { Container, withRedux } from 'react-redux-toolbelt'
+import { bindActionCreators } from 'redux'
+import { Container }          from 'react-redux-toolbelt'
 
 // internal
 import login from './actions/somewhere/loginUser'
@@ -55,7 +57,7 @@ class UserContainer extends Container {
   }
 }
 
-export default withRedux( UserContainer )
+export default UserContainer
 ```
 
 

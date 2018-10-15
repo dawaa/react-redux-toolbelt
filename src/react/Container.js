@@ -1,6 +1,9 @@
 // external
 import React from 'react'
 
+// internal
+import withRedux from './utils/withRedux'
+
 class Container extends React.PureComponent {
 
   _getChildrenWithInheritedProps() {
@@ -14,10 +17,25 @@ class Container extends React.PureComponent {
   render() {
     const children = this._getChildrenWithInheritedProps()
 
+    class WrappedContainer extends Container {
+      render() {
+        const children = this._getChildrenWithInheritedProps()
+
+        return (
+          <React.Fragment>
+            { children }
+          </React.Fragment>
+        )
+      }
+    }
+
+    WrappedContainer.setProps       = this.constructor.setProps
+    const ConnectedWrappedContainer = withRedux( WrappedContainer )
+
     return (
-      <React.Fragment>
+      <ConnectedWrappedContainer>
         { children }
-      </React.Fragment>
+      </ConnectedWrappedContainer>
     )
   }
 
