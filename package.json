@@ -1,6 +1,6 @@
 {
   "name": "react-redux-toolbelt",
-  "version": "0.1.1-rc3",
+  "version": "0.1.1-rc4",
   "description": "React & Redux toolbox including components, util functions and more",
   "main": "./lib/index.js",
   "files": [
