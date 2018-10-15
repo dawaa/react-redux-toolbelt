@@ -75,7 +75,6 @@ describe( 'Container', () => {
         }),
       }
     }
-    const ConnectedTestContainer = withRedux( TestContainer )
 
     class TestComponent extends React.Component {
       render() {
@@ -84,9 +83,9 @@ describe( 'Container', () => {
     }
 
     component = mountWithStore(() => (
-      <ConnectedTestContainer>
+      <TestContainer>
         <TestComponent />
-      </ConnectedTestContainer>
+      </TestContainer>
     ))
 
     const childProps = component.find( 'TestComponent' ).props()
@@ -104,7 +103,6 @@ describe( 'Container', () => {
         }),
       }
     }
-    const ConnectedOuterTestContainer = withRedux( OuterTestContainer )
 
     const fakeActionFn = sandbox.stub()
     class InnerTestContainer extends Container {
@@ -114,7 +112,6 @@ describe( 'Container', () => {
         }),
       }
     }
-    const ConnectedInnerTestContainer = withRedux( InnerTestContainer )
 
     class TestComponent extends React.Component {
       render() {
@@ -123,11 +120,11 @@ describe( 'Container', () => {
     }
 
     component = mountWithStore(() => (
-      <ConnectedOuterTestContainer>
-        <ConnectedInnerTestContainer>
+      <OuterTestContainer>
+        <InnerTestContainer>
           <TestComponent />
-        </ConnectedInnerTestContainer>
-      </ConnectedOuterTestContainer>
+        </InnerTestContainer>
+      </OuterTestContainer>
     ))
 
     const childProps = component.find( 'TestComponent' ).props()
@@ -146,7 +143,6 @@ describe( 'Container', () => {
         }),
       }
     }
-    const ConnectedOuterTestContainer = withRedux( OuterTestContainer )
 
     const fakeActionFn = sandbox.stub()
     class InnerTestContainer extends Container {
@@ -160,7 +156,6 @@ describe( 'Container', () => {
         }),
       }
     }
-    const ConnectedInnerTestContainer = withRedux( InnerTestContainer )
 
     class TestComponent extends React.Component {
       render() {
@@ -169,11 +164,11 @@ describe( 'Container', () => {
     }
 
     component = mountWithStore(() => (
-      <ConnectedOuterTestContainer>
-        <ConnectedInnerTestContainer>
+      <OuterTestContainer>
+        <InnerTestContainer>
           <TestComponent />
-        </ConnectedInnerTestContainer>
-      </ConnectedOuterTestContainer>
+        </InnerTestContainer>
+      </OuterTestContainer>
     ))
 
     const childProps = component.find( 'TestComponent' ).props()
